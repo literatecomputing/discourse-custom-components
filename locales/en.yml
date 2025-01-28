@@ -1,0 +1,5 @@
+en:
+  theme_metadata:
+    description: Add custom components (e.g., buttons) at any plugin outlet
+    settings:
+      example_setting: A description of a setting.
