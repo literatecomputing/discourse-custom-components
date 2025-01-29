@@ -19,6 +19,7 @@ export default class ButtonLink extends Component {
       return !isGroupMember;
     }
   }
+
   get button() {
     return this.args.button;
   }
