@@ -3,3 +3,50 @@ en:
     description: Add custom components (e.g., buttons) at any plugin outlet
     settings:
       example_setting: A description of a setting.
+      buttons:
+        description: A list of buttons to display at the specified outlet
+        schema:
+          properties:
+            text:
+              label: Button Text
+              description: The text to display on the button
+            title:
+              label: Button Title
+              description: The title attribute for the button
+            url:
+              label: Button URL
+              description: The URL to link to when the button is clicked
+            class:
+              label: Button Class
+              description: The class to apply to the button
+            icon:
+              label: Button Icon
+              description: The name of the icon to display on the button
+            outlet:
+              label: Button Outlet
+              description: The name of the outlet where the button should be displayed
+            group_action:
+              label: Group Action
+              description: Whether to show or hide the button for the specified groups
+            groups:
+              label: Button Groups
+              description: The button will be displayed/hidden if the user is in one of these groups
+      custom_text_block:
+        description: A list of text blocks to display at the specified outlet
+        schema:
+          properties:
+            text:
+              label: Text Block
+              description: The text to display (html is allowed)
+            outlet:
+              label: Text Block Outlet
+              description: The name of the plugin outlet where the text block should be displayed
+            class:
+              label: Text Block Class
+              description: The class to apply to the text block
+            group_action:
+              label: Group Action
+              description: Whether to show or hide the text block for the specified groups
+            groups:
+              label: Text Block Groups
+              description: The text block will be displayed/hidden if the user is in one of these groups
