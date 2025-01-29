@@ -1,2 +1,65 @@
-example_setting:
-  default: true
+# See https://meta.discourse.org/t/objects-type-for-theme-setting/305009
+buttons:
+  type: objects
+  default: []
+  schema:
+    name: link_button
+    properties:
+      text:
+        type: string
+        required: true
+        description: The text to display on the button
+      title:
+        type: string
+        required: false
+        description: The title attribute for the button
+      url:
+        type: string
+        required: true
+        description: The URL to link to when the button is clicked
+      class:
+        type: string
+        required: false
+        description: The class to apply to the button
+      icon:
+        type: string
+        required: false
+        description: The name of the icon to display on the button
+      outlet:
+        type: string
+        required: true
+      group_action:
+        type: enum
+        required: true
+        choices:
+          - show
+          - hide
+      groups:
+        type: groups
+        required: true
+        default: []
+custom_text_block:
+  type: objects
+  default: []
+  schema:
+    name: text_block
+    properties:
+      text:
+        type: string
+        required: true
+      outlet:
+        type: string
+        required: true
+      class:
+        type: string
+        required: false
+      group_action:
+        type: enum
+        required: true
+        choices:
+          - show
+          - hide
+      groups:
+        type: groups
+        required: true
+        default: []
