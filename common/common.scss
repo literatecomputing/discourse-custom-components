@@ -1,0 +1,7 @@
+.custom-component.warning {
+  color: red;
+}
+a.btn-custom.test-button {
+  background-color: --var(--danger);
+  color: --var(--tertiary);
+}

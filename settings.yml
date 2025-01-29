@@ -1,7 +1,16 @@
 # See https://meta.discourse.org/t/objects-type-for-theme-setting/305009
 buttons:
   type: objects
-  default: []
+  default:
+    - name: button 1
+      text: "Custom Component Demo Button!!"
+      title: "See this text if you mouseover the button"
+      url: "https://www.literatecomputing.com"
+      class: "test-button"
+      icon: "triangle-exclamation"
+      outlet: "top-notices"
+      group_action: "show"
+      groups: [1]
   schema:
     name: link_button
     properties:
@@ -40,7 +49,13 @@ buttons:
         default: []
 custom_text_block:
   type: objects
-  default: []
+  default:
+    - name: text_block 1
+      text: "Custom Component Demo Text Block 1!!"
+      outlet: "top-notices"
+      class: "warning"
+      group_action: "show"
+      groups: [1]
   schema:
     name: text_block
     properties:
