@@ -1,6 +1,6 @@
 # Custom Components
 
-**Add Custom Components at Any Plugin Outlet **
+## Add Custom Components at Any Plugin Outlet
 
 To find plugin outlets, run `enableDevTools()` in the javascript console.
 
