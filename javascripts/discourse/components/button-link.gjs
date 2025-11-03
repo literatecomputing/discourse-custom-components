@@ -24,6 +24,7 @@ export default class ButtonLink extends Component {
   get button() {
     return this.args.button;
   }
+}
 
   <template>
     {{#if this.showButtonLink}}
@@ -31,9 +32,7 @@ export default class ButtonLink extends Component {
         @icon={{this.button.icon}}
         @translatedLabel={{this.button.text}}
         class={{concatClass "btn-custom" this.button.class}}
-        {{#if this.button.id }}
-          id={{this.button.id}}
-        {{/if}}
+        id={{this.button.id}}
         @translatedTitle={{this.button.title}}
         @href={{this.button.url}}
       />
