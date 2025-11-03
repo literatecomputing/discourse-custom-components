@@ -5,6 +5,7 @@ import concatClass from "discourse/helpers/concat-class";
 
 export default class ButtonLink extends Component {
   @service currentUser;
+
   get showButtonLink() {
     let isGroupMember =
       !!this.currentUser &&
