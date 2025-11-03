@@ -31,13 +31,14 @@ export default class ButtonLink extends Component {
         @icon={{this.button.icon}}
         @translatedLabel={{this.button.text}}
         class={{concatClass "btn-custom" this.button.class}}
-        {{if this.button.id }}
+        {{#if this.button.id }}
           id={{this.button.id}}
         {{/if}}
         @translatedTitle={{this.button.title}}
         @href={{this.button.url}}
       />
     {{/if}}
+
 
   </template>
 }
