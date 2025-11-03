@@ -24,7 +24,6 @@ export default class ButtonLink extends Component {
   get button() {
     return this.args.button;
   }
-}
 
   <template>
     {{#if this.showButtonLink}}
@@ -37,7 +36,5 @@ export default class ButtonLink extends Component {
         @href={{this.button.url}}
       />
     {{/if}}
-
-
   </template>
 }
