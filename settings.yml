@@ -30,6 +30,10 @@ buttons:
         type: string
         required: false
         description: The class to apply to the button
+      id:
+        type: string
+        required: false
+        description: The id to apply to the button
       icon:
         type: string
         required: false
