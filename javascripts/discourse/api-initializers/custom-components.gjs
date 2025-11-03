@@ -11,7 +11,7 @@ export default apiInitializer((api) => {
       <template><ButtonLink @button={{button}} /></template>
     );
   });
-  
+
   settings.custom_text_block.forEach((component) => {
     api.renderInOutlet(
       component.outlet,
