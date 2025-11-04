@@ -72,6 +72,10 @@ custom_text_block:
       class:
         type: string
         required: false
+      id:
+        type: string
+        required: false
+        description: The id to apply to the text block
       group_action:
         type: enum
         required: true

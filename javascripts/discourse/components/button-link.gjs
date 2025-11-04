@@ -6,7 +6,7 @@ import concatClass from "discourse/helpers/concat-class";
 export default class ButtonLink extends Component {
   @service currentUser;
 
-  get showButtonLink() {
+  get shouldRender() {
     let isGroupMember =
       !!this.currentUser &&
       this.args.button.groups.some((group) => {
@@ -27,7 +27,7 @@ export default class ButtonLink extends Component {
   }
 
   <template>
-    {{#if this.showButtonLink}}
+    {{#if this.shouldRender}}
       <DButton
         @icon={{this.button.icon}}
         @translatedLabel={{this.button.text}}
