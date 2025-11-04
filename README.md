@@ -5,3 +5,4 @@
 To find plugin outlets, run `enableDevTools()` in the javascript console.
 
 Demonstrates [Objects type for theme settings](https://meta.discourse.org/t/objects-type-for-theme-setting/305009) and how to use `api.renderInOutlet` to render a Ember (glimmer?) component anywhere you want.
+See `TESTING.md` for instructions on running the Discourse-style system specs for this theme.
