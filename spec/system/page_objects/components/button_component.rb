@@ -3,7 +3,7 @@
 module PageObjects
   module Components
     class ButtonComponent < PageObjects::Components::Base
-      COMPONENT_SELECTOR = '.btn-custom'
+      COMPONENT_SELECTOR = ".btn-custom"
 
       def label_text
         # DButton may render text inside the component; return its visible text
@@ -11,11 +11,11 @@ module PageObjects
       end
 
       def href
-        attribute_value('href')
+        attribute_value("href")
       end
 
       def id
-        attribute_value('id')
+        attribute_value("id")
       end
       def visible?(opts = {})
         has_css?(COMPONENT_SELECTOR, **opts)

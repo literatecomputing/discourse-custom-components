@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 require_relative "page_objects/components/button_component"
+require_relative "../support/theme_helpers"
+
+include ThemeHelpers
 
 RSpec.describe "Button visibility", type: :system do
   fab!(:group1) { Fabricate(:group, name: "group1") }
@@ -9,13 +12,11 @@ RSpec.describe "Button visibility", type: :system do
 
   let(:button) { PageObjects::Components::ButtonComponent.new }
 
-  def configure_button(entry)
-    theme.update_setting(:buttons, [entry])
-    theme.save!
-  end
+  # use ThemeHelpers#configure_button(theme, entry)
 
   it "shows the button for members when group_action is 'show'" do
     configure_button(
+      theme,
       {
         "name" => "button 1",
         "text" => "Click me",
@@ -25,20 +26,21 @@ RSpec.describe "Button visibility", type: :system do
         "icon" => "triangle-exclamation",
         "outlet" => "top-notices",
         "group_action" => "show",
-        "groups" => [group1.id]
-      }
+        "groups" => [group1.id],
+      },
     )
 
     sign_in(member)
     visit "/"
 
     expect(button.visible?).to be true
-    expect(button.label_text).to include('Click me')
-    expect(button.href).to include('https://example.com')
+    expect(button.label_text).to include("Click me")
+    expect(button.href).to include("https://example.com")
   end
 
   it "hides the button for anonymous visitors when group_action is 'show'" do
     configure_button(
+      theme,
       {
         "name" => "button 1",
         "text" => "Click me",
@@ -48,8 +50,8 @@ RSpec.describe "Button visibility", type: :system do
         "icon" => "triangle-exclamation",
         "outlet" => "top-notices",
         "group_action" => "show",
-        "groups" => [group1.id]
-      }
+        "groups" => [group1.id],
+      },
     )
 
     visit "/"
@@ -58,6 +60,7 @@ RSpec.describe "Button visibility", type: :system do
 
   it "hides the button for group members when group_action is 'hide'" do
     configure_button(
+      theme,
       {
         "name" => "button 1",
         "text" => "Hidden",
@@ -65,8 +68,8 @@ RSpec.describe "Button visibility", type: :system do
         "class" => "test-button",
         "outlet" => "top-notices",
         "group_action" => "hide",
-        "groups" => [group1.id]
-      }
+        "groups" => [group1.id],
+      },
     )
 
     sign_in(member)
@@ -76,6 +79,7 @@ RSpec.describe "Button visibility", type: :system do
 
   it "renders the configured id attribute when visible" do
     configure_button(
+      theme,
       {
         "name" => "button 1",
         "text" => "Has ID",
@@ -84,12 +88,12 @@ RSpec.describe "Button visibility", type: :system do
         "id" => "my-button",
         "outlet" => "top-notices",
         "group_action" => "show",
-        "groups" => [group1.id]
-      }
+        "groups" => [group1.id],
+      },
     )
 
     sign_in(member)
     visit "/"
-    expect(button.id).to eq('my-button')
+    expect(button.id).to eq("my-button")
   end
 end

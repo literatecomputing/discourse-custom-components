@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'capybara'
+require "capybara"
 
 module PageObjects
   module Components
@@ -14,7 +14,11 @@ module PageObjects
 
       # Subclasses should override COMPONENT_SELECTOR or component_selector
       def component_selector
-        self.class.const_defined?(:COMPONENT_SELECTOR) ? self.class.const_get(:COMPONENT_SELECTOR) : @scope
+        if self.class.const_defined?(:COMPONENT_SELECTOR)
+          self.class.const_get(:COMPONENT_SELECTOR)
+        else
+          @scope
+        end
       end
 
       def has_css?(selector, **opts)

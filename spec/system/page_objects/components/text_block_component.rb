@@ -3,7 +3,7 @@
 module PageObjects
   module Components
     class TextBlockComponent < PageObjects::Components::Base
-      COMPONENT_SELECTOR = '.custom-component'
+      COMPONENT_SELECTOR = ".custom-component"
 
       def component_selector
         COMPONENT_SELECTOR
@@ -22,7 +22,12 @@ module PageObjects
       end
 
       def attribute(name)
-        attribute_value = attribute(name, COMPONENT_SELECTOR) rescue nil
+        attribute_value =
+          begin
+            attribute(name, COMPONENT_SELECTOR)
+          rescue StandardError
+            nil
+          end
         # Fall back to finding the element directly if Base#attribute isn't available
         attribute_value ||= page.find(COMPONENT_SELECTOR)[name]
         attribute_value
